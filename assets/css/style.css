@@ -415,7 +415,7 @@ a:hover{
     background-size: contain;
     background-position: bottom;
     background-repeat: no-repeat;
-    background-image: url('../images/hero-portrait.png');
+    background-image: url('../images/hero-portrait-20260509.png');
 }
 
 @media (max-width: 576px) {
@@ -443,7 +443,7 @@ a:hover{
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url('../images/hero-portrait.png');
+        background-image: url('../images/hero-portrait-20260509.png');
     }
 
     .hero-content{
