@@ -536,6 +536,9 @@ a:hover{
 }
 
 .about-portrait{
+    --portrait-width: min(72%, 340px);
+    --portrait-height: calc(var(--portrait-width) * 1.433);
+    position: relative;
     display: flex;
     padding: 30px 0px 30px 0px;
     justify-content: center;
@@ -545,8 +548,8 @@ a:hover{
 .about-portrait::before {
     content: "";
     background-color: transparent;
-    height: 300px;
-    width: 300px;
+    height: var(--portrait-height);
+    width: var(--portrait-width);
     position: absolute;
     z-index: -2;
     box-shadow: 2px 2px 0px inset var(--primary-color), -2px -2px 0px inset transparent;
@@ -564,8 +567,8 @@ a:hover{
 .about-portrait::after {
     content: "";
     background-color: transparent;
-    height: 300px;
-    width: 300px;
+    height: var(--portrait-height);
+    width: var(--portrait-width);
     position: absolute;
     z-index: -2;
     box-shadow: 2px 2px 0px inset transparent, -2px -2px 0px inset var(--primary-color);
@@ -581,10 +584,12 @@ a:hover{
 }
 
 .about-portrait .pic{
-    width: 70%;
-    height: auto;
+    width: var(--portrait-width);
+    aspect-ratio: 448 / 642;
+    display: block;
     border-radius: 0.5rem;
     object-fit: cover;
+    object-position: center top;
     box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 12px 8px 0px 0px #850dd5;
     -webkit-box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 12px 8px 0px 0px #850dd5;
 }
@@ -598,11 +603,9 @@ a:hover{
 
     @media (max-width: 576px) {
         .about-portrait{
+            --portrait-width: min(90%, 290px);
             display: flex;
             padding: 30px 36px 30px 36px;
-        }
-        .about-portrait .pic {
-            width: 90%;
         }
         #about .bio{
             font-size: 14px;
